@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Pos?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.AddProductController">
-    <VBox alignment="CENTER" layoutX="50" layoutY="50" spacing="10">
-        <Label text="Название продукта:" />
-        <TextField fx:id="productNameField" promptText="Введите название продукта" />
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.AddProductController" prefHeight="400.0" prefWidth="600.0">
+    <Label text="Название продукта:" />
+    <TextField fx:id="productNameField" promptText="Введите название продукта" />
 
-        <Label text="Дата продукта:" />
-        <TextArea fx:id="productDescriptionField" promptText="Введите дату продукта" />
+    <Label text="Дата продукта:" />
+    <TextArea fx:id="productDescriptionField" promptText="Введите дату продукта" />
 
-        <Button onAction="#handleUploadImage" text="Загрузить изображение" />
-        <ImageView fx:id="productImageView" fitHeight="150" fitWidth="200" preserveRatio="true" />
+    <Button onAction="#handleUploadImage" text="Загрузить изображение" />
+    <ImageView fx:id="productImageView" fitHeight="150" fitWidth="200" preserveRatio="true" />
 
-        <Button onAction="#handleSaveProduct" text="Сохранить продукт" />
-      <Button layoutX="175.0" layoutY="290.0" onAction="#backPage" prefHeight="25.0" prefWidth="114.0" text="Назад" />
-
-    </VBox>
-</AnchorPane>
+    <Button onAction="#handleSaveProduct" text="Сохранить продукт" />
+    <Button onAction="#backPage" text="Назад" />
+</VBox>

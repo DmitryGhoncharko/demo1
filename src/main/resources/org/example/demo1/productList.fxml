@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Pos?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.ProductListController">
-    <TableView fx:id="productTableView" layoutX="20" layoutY="20" prefHeight="360.0" prefWidth="560.0">
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.ProductListController" prefHeight="400.0" prefWidth="600.0">
+    <TableView fx:id="productTableView" prefHeight="360.0" prefWidth="560.0">
         <columns>
             <TableColumn fx:id="idColumn" text="ID" />
             <TableColumn fx:id="nameColumn" text="Название" />
@@ -13,5 +14,5 @@
             <TableColumn fx:id="deleteColumn" text="Удалить" />
         </columns>
     </TableView>
-   <Button mnemonicParsing="false" onAction="#backPage" prefHeight="25.0" prefWidth="600.0" text="Назад" />
-</AnchorPane>
+    <Button mnemonicParsing="false" onAction="#backPage" prefHeight="25.0" prefWidth="560.0" text="Назад" />
+</VBox>

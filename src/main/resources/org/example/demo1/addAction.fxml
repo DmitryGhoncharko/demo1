@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.AddActionController" prefHeight="400.0" prefWidth="600.0">
+    <TextField fx:id="actionInfoField" promptText="Информация о акции" prefWidth="560.0" />
+    <ImageView fx:id="actionImageView" fitHeight="150.0" fitWidth="150.0" />
+    <Button fx:id="uploadImageButton" onAction="#handleUploadImage" text="Загрузить изображение" />
+    <Button fx:id="saveActionButton" onAction="#handleSaveAction" text="Сохранить акцию" prefWidth="560.0" />
+    <Button mnemonicParsing="false" onAction="#backPage" text="Назад" prefWidth="560.0" />
+</VBox>

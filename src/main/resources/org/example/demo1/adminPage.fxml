@@ -16,11 +16,11 @@
          </image>
       </ImageView>
       <Button mnemonicParsing="false" onAction="#productListPage" prefHeight="25.0" prefWidth="331.0" text="Список товаров" />
-      <Button layoutX="317.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="331.0" text="Список акций" />
+      <Button layoutX="317.0" layoutY="300.0" mnemonicParsing="false" onAction="#actionListPage" prefHeight="25.0" prefWidth="331.0" text="Список акций" />
       <Button layoutX="317.0" layoutY="300.0" mnemonicParsing="false" onAction="#addProductPage" prefHeight="25.0" prefWidth="331.0" text="Добавить товар" />
-      <Button layoutX="317.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="331.0" text="Добавить акцию" />
+      <Button layoutX="317.0" layoutY="322.0" mnemonicParsing="false" onAction="#addActionPage" prefHeight="25.0" prefWidth="331.0" text="Добавить акцию" />
       <Button layoutX="317.0" layoutY="345.0" mnemonicParsing="false" onAction="#texPage" prefHeight="25.0" prefWidth="331.0" text="Техническая поддержка" />
-      <Button layoutX="317.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="331.0" text="Выйти" />
+      <Button layoutX="317.0" layoutY="322.0" mnemonicParsing="false" onAction="#exitListPage" prefHeight="25.0" prefWidth="331.0" text="Выйти" />
    </children>
 
 </VBox>

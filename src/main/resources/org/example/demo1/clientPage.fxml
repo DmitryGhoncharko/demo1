@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.demo1.ClientPageController"
+            prefHeight="600.0" prefWidth="300.0">
+    <VBox alignment="TOP_CENTER" spacing="20" prefWidth="300.0">
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #d1e231;" padding="20">
+            <ImageView fx:id="profileImageView" fitHeight="50.0" fitWidth="50.0" />
+            <Label fx:id="nameLabel" text="Имя" />
+            <Label fx:id="phoneLabel" text="+375 (xx)-xxx-xx-xx" />
+        </VBox>
+        <VBox alignment="CENTER_LEFT" spacing="10" padding="20">
+            <Button text="История покупок" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Магазины" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Продукция" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Акции и скидки" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Настройки" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Поддержка" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Контакты" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Выйти из аккаунта" prefWidth="250" />
+        </VBox>
+    </VBox>
+</AnchorPane>
