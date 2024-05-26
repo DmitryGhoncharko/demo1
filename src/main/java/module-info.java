@@ -7,4 +7,6 @@ module org.example.demo1 {
 
     opens org.example.demo1 to javafx.fxml;
     exports org.example.demo1;
+    exports org.example.demo1.entity;
 }
+
