@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo1.SettingsController"
+      alignment="TOP_CENTER"
+      spacing="20"
+      prefHeight="600.0"
+      prefWidth="400.0"
+      style="-fx-background-color: #f4f4f4;">
+
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #d1e231;" prefHeight="60.0" prefWidth="400.0">
+        <ImageView fx:id="backButton" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleBackButtonAction">
+            <Image url="@/images/arrow.jpg" />
+        </ImageView>
+        <Label text="Мой профиль" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <Button text="Выйти" onAction="#handleLogoutButtonAction" style="-fx-background-color: #d1e231; -fx-border-color: transparent;" alignment="CENTER_RIGHT" />
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="10">
+        <TextField promptText="Фамилия" />
+        <TextField promptText="Имя" />
+        <TextField promptText="Отчество" />
+        <TextField promptText="Номер телефона" />
+        <TextField promptText="E-mail" />
+        <Label text="Пол" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+        <HBox alignment="CENTER" spacing="10">
+            <ToggleButton text="Мужской" fx:id="maleToggleButton" />
+            <ToggleButton text="Женский" fx:id="femaleToggleButton" />
+        </HBox>
+        <TextField promptText="Дата рождения" />
+        <Button text="Сохранить" onAction="#handleSaveButtonAction" style="-fx-background-color: #d1e231;" />
+    </VBox>
+
+
+</VBox>

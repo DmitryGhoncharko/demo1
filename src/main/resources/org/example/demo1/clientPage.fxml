@@ -39,7 +39,7 @@
             <Button text="Акции и скидки" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Настройки" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Настройки" onAction="#settingsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
             <Button text="Поддержка" onAction="#supportPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
