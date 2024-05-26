@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.Image?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo1.ContactsController"
+      alignment="TOP_CENTER"
+      spacing="20"
+      prefHeight="600.0"
+      prefWidth="400.0"
+      style="-fx-background-color: #f4f4f4;">
+
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #d1e231;" prefHeight="60.0" prefWidth="400.0">
+        <ImageView fx:id="backButton" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleBackButtonAction">
+            <Image url="@/images/arrow.jpg" />
+        </ImageView>
+        <Label text="Контакты" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    </HBox>
+
+    <VBox alignment="CENTER_LEFT" spacing="10">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        <Label text="Открытое акционерное общество “Милкавита”" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <Label text="Головной офис" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="Адрес:\nул. Братьев Лизюковых, 1,\n246029, г. Гомель, Республика Беларусь" style="-fx-font-size: 14px;" />
+        <Label text="Режим работы:\nПн-Пт: 8:00–17:00 / Обеденный перерыв: 13:00–14:00 / Сб-Вс: выходной" style="-fx-font-size: 14px;" />
+        <Label text="Генеральный директор:\nГоленков Андрей Леонидович" style="-fx-font-size: 14px;" />
+        <Label text="Приемная:\nтел.: +375 232 23 72 29, факс: +375 232 23 72 40" style="-fx-font-size: 14px;" />
+        <Label text="Email: info@milkavita.by" style="-fx-font-size: 14px;" />
+    </VBox>
+</VBox>
