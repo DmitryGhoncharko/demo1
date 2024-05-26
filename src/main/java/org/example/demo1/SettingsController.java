@@ -66,6 +66,34 @@ public class SettingsController {
         genderToggleGroup = new ToggleGroup();
         maleToggleButton.setToggleGroup(genderToggleGroup);
         femaleToggleButton.setToggleGroup(genderToggleGroup);
+        phoneField.setText(Cache.users.get(0).getPhone());
+        loadUserDetails();
+    }
+
+    private void loadUserDetails() {
+        try (Connection connection = MySQLConnectionPool.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user_details WHERE user_id = ?")) {
+            preparedStatement.setInt(1, Cache.users.get(0).getUserId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                surnameField.setText(resultSet.getString("user_surname"));
+                nameField.setText(resultSet.getString("user_name"));
+                patronymicField.setText(resultSet.getString("user_patronymic"));
+                phoneField.setText(Cache.users.get(0).getPhone());
+                emailField.setText(resultSet.getString("user_email"));
+                birthdateField.setText(resultSet.getString("user_birthdate"));
+                String gender = resultSet.getString("user_gender");
+
+                if (gender.equals("Мужской")) {
+                    maleToggleButton.setSelected(true);
+                } else if (gender.equals("Женский")) {
+                    femaleToggleButton.setSelected(true);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -105,31 +133,37 @@ public class SettingsController {
         String patronymic = patronymicField.getText();
         String phone = phoneField.getText();
         String email = emailField.getText();
+        try(Connection connection = MySQLConnectionPool.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement("update users set phone = ? where user_id = ?")){
+            preparedStatement.setString(1,phone);
+            preparedStatement.setInt(2,Cache.users.get(0).getUserId());
+        }catch (SQLException e){
+
+        }
         String gender = ((ToggleButton) genderToggleGroup.getSelectedToggle()).getText();
         String birthdate = birthdateField.getText();
-        try(Connection connection = MySQLConnectionPool.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement("select * from user_deatails where user_id = ?")){
-            preparedStatement.setInt(1,Cache.users.get(0).getUserId());
+        try(Connection connection = MySQLConnectionPool.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user_details WHERE user_id = ?")) {
+            preparedStatement.setInt(1, Cache.users.get(0).getUserId());
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
-               int id = resultSet.getInt("user_details_id");
-               try(Connection connection1 = MySQLConnectionPool.getConnection();PreparedStatement preparedStatement1 = connection1.prepareStatement(
-                       "update user_details set user_surname = ? , user_name = ?, user_patronymic = ?, user_gender = ?, user_birthdate = ?, user_email = ? where user_details_id = ?"
-               )){
-                   preparedStatement.setString(1,surname);
-                   preparedStatement.setString(2,name);
-                   preparedStatement.setString(3,patronymic);
-                   preparedStatement.setString(4,gender);
-                   preparedStatement.setString(5,birthdate);
-                   preparedStatement.setString(6,email);
-                   preparedStatement.setInt(7,id);
-                   preparedStatement.execute();
-               }catch (SQLException e){
-
-               }
-            }else{
+                int id = resultSet.getInt("user_details_id");
                 try(Connection connection1 = MySQLConnectionPool.getConnection(); PreparedStatement preparedStatement1 = connection1.prepareStatement(
-                        "insert into user_detais(user_surname,user_name,user_patronymic,user_gender,user_birthdate,user_id,user_email) values(?,?,?,?,?,?,?)"
-                )){
+                        "UPDATE user_details SET user_surname = ?, user_name = ?, user_patronymic = ?, user_gender = ?, user_birthdate = ?, user_email = ?  WHERE user_details_id = ?"
+                )) {
+                    preparedStatement1.setString(1, surname);
+                    preparedStatement1.setString(2, name);
+                    preparedStatement1.setString(3, patronymic);
+                    preparedStatement1.setString(4, gender);
+                    preparedStatement1.setString(5, birthdate);
+                    preparedStatement1.setString(6, email);
+                    preparedStatement1.setInt(7, id);
+                    preparedStatement1.execute();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try (Connection connection1 = MySQLConnectionPool.getConnection(); PreparedStatement preparedStatement1 = connection1.prepareStatement(
+                        "INSERT INTO user_details(user_surname, user_name, user_patronymic, user_gender, user_birthdate, user_id, user_email) VALUES(?, ?, ?, ?, ?, ?, ?)"
+                )) {
                     preparedStatement1.setString(1, surname);
                     preparedStatement1.setString(2, name);
                     preparedStatement1.setString(3, patronymic);
@@ -138,13 +172,12 @@ public class SettingsController {
                     preparedStatement1.setInt(6, Cache.users.get(0).getUserId());
                     preparedStatement1.setString(7, email);
                     preparedStatement1.executeUpdate();
-
-                }catch (SQLException e){
-
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
-        }catch (SQLException e) {
-
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

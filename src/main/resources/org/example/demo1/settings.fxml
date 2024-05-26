@@ -25,19 +25,17 @@
     </HBox>
 
     <VBox alignment="CENTER" spacing="10">
-        <TextField promptText="Фамилия" />
-        <TextField promptText="Имя" />
-        <TextField promptText="Отчество" />
-        <TextField promptText="Номер телефона" />
-        <TextField promptText="E-mail" />
+        <TextField fx:id="surnameField" promptText="Фамилия" />
+        <TextField fx:id="nameField" promptText="Имя" />
+        <TextField fx:id="patronymicField" promptText="Отчество" />
+        <TextField fx:id="phoneField" promptText="Номер телефона" />
+        <TextField fx:id="emailField" promptText="E-mail" />
         <Label text="Пол" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
         <HBox alignment="CENTER" spacing="10">
             <ToggleButton text="Мужской" fx:id="maleToggleButton" />
             <ToggleButton text="Женский" fx:id="femaleToggleButton" />
         </HBox>
-        <TextField promptText="Дата рождения" />
+        <TextField fx:id="birthdateField" promptText="Дата рождения" />
         <Button text="Сохранить" onAction="#handleSaveButtonAction" style="-fx-background-color: #d1e231;" />
     </VBox>
-
-
 </VBox>
