@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Pos?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.demo1.ClientPageController"
-      alignment="CENTER"
-      spacing="20"
-      prefHeight="600.0"
-      prefWidth="300.0"
-      style="-fx-background-color: #f4f4f4;">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" spacing="20" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.ClientPageController">
     <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #d1e231;" VBox.vgrow="ALWAYS">
         <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
+            <Insets bottom="20" left="20" right="20" top="20" />
         </padding>
         <ImageView fx:id="profileImageView" fitHeight="50.0" fitWidth="50.0" />
         <Label fx:id="nameLabel" text="Имя" />
@@ -24,31 +16,41 @@
     </VBox>
     <VBox alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS">
         <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
+            <Insets bottom="20" left="20" right="20" top="20" />
         </padding>
         <HBox alignment="CENTER">
-            <Button text="История покупок" onAction="#history" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#history" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="История покупок" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Магазины" onAction="#shopsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#shopsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Магазины" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Продукция" onAction="#productPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#productPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Продукция" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Акции и скидки" onAction="#actions" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#actions" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Акции и скидки" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Настройки" onAction="#settingsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#settingsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Настройки" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Поддержка" onAction="#supportPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#supportPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Поддержка" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Контакты" onAction="#contactsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button onAction="#contactsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Контакты" />
         </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="280.0">
+         <children>
+            <Button onAction="#qrCode" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="QR код" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="308.0">
+         <children>
+            <Button onAction="#bonus" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" text="Бонусы" />
+         </children>
+      </HBox>
         <HBox alignment="CENTER">
-            <Button onAction="#backPage" text="Выйти из аккаунта" prefWidth="250" />
+            <Button onAction="#backPage" prefWidth="250" text="Выйти из аккаунта" />
         </HBox>
     </VBox>
 </VBox>

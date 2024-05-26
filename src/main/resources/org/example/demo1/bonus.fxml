@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo1.BonusController"
+      alignment="TOP_CENTER"
+      spacing="10"
+      prefHeight="400.0"
+      prefWidth="600.0"
+      style="-fx-background-color: #e0f7fa;">
+
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #d1e231;" prefHeight="60.0" prefWidth="600.0">
+        <ImageView fx:id="backButton" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleBackButtonAction">
+            <Image url="@/images/arrow.jpg" />
+        </ImageView>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS">
+        <VBox alignment="CENTER" spacing="10">
+            <Label fx:id="bonusLabel" text="0.0" style="-fx-font-size: 48px; -fx-text-fill: #000000;" />
+            <Label text="бонусов" style="-fx-font-size: 24px; -fx-text-fill: #000000;" />
+        </VBox>
+    </VBox>
+</VBox>
