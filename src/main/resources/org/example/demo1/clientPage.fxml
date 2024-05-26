@@ -27,7 +27,7 @@
             <Insets top="20" right="20" bottom="20" left="20"/>
         </padding>
         <HBox alignment="CENTER">
-            <Button text="История покупок" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="История покупок" onAction="#history" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
             <Button text="Магазины" onAction="#shopsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
