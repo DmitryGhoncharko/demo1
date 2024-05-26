@@ -1,19 +1,32 @@
 package org.example.demo1;
 
 import javafx.fxml.FXML;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ContactsController {
+public class ShopsController {
+
+    @FXML
+    private ImageView mapView;
 
     @FXML
     private ImageView backButton;
+
+    @FXML
+    private void initialize() {
+        Image mapImage = new Image("/images/map.png");
+        mapView.setImage(mapImage);
+        mapView.setFitHeight(1024);
+        mapView.setFitWidth(768);
+        mapView.setPreserveRatio(true);
+    }
 
     @FXML
     private void handleBackButtonAction(MouseEvent event) {

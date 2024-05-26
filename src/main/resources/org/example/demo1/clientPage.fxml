@@ -30,13 +30,13 @@
             <Button text="История покупок" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Магазины" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Магазины" onAction="#shopsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Продукция" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Продукция" onAction="#productPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
-            <Button text="Акции и скидки" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
+            <Button text="Акции и скидки" onAction="#actions" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />
         </HBox>
         <HBox alignment="CENTER">
             <Button text="Настройки" onAction="#settingsPage" prefWidth="250" style="-fx-border-color: transparent transparent black transparent;" />

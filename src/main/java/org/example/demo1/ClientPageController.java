@@ -107,4 +107,58 @@ public class ClientPageController {
         newStage.show();
 
     }
+    @FXML
+    protected void shopsPage(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shops.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        currentStage.close();
+        Stage newStage = new Stage();
+        newStage.setTitle("Main Window");
+        newStage.setScene(new Scene(root));
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        newStage.setX(screenBounds.getMinX());
+        newStage.setY(screenBounds.getMinY());
+        newStage.setWidth(screenBounds.getWidth());
+        newStage.setHeight(screenBounds.getHeight());
+        newStage.setFullScreen(true);
+        newStage.show();
+
+    }
+    @FXML
+    protected void productPage(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("products.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        currentStage.close();
+        Stage newStage = new Stage();
+        newStage.setTitle("Main Window");
+        newStage.setScene(new Scene(root));
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        newStage.setX(screenBounds.getMinX());
+        newStage.setY(screenBounds.getMinY());
+        newStage.setWidth(screenBounds.getWidth());
+        newStage.setHeight(screenBounds.getHeight());
+        newStage.setFullScreen(true);
+        newStage.show();
+
+    }
+    @FXML
+    protected void actions(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("act.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        currentStage.close();
+        Stage newStage = new Stage();
+        newStage.setTitle("Main Window");
+        newStage.setScene(new Scene(root));
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        newStage.setX(screenBounds.getMinX());
+        newStage.setY(screenBounds.getMinY());
+        newStage.setWidth(screenBounds.getWidth());
+        newStage.setHeight(screenBounds.getHeight());
+        newStage.setFullScreen(true);
+        newStage.show();
+
+    }
 }
